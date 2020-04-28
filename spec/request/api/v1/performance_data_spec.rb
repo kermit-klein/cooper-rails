@@ -1,7 +1,9 @@
 RSpec.describe Api::V1::PerformanceDataController, type: :request do
   let(:headers) { { HTTP_ACCEPT: 'application/json' }.merge!(credentials) }
   let(:user) { create(:user) }
+  let(:user1) { create(:user, email:"ali@gmail.com") }
   let(:credentials) { user.create_new_auth_token }
+  let(:credentials1) { user1.create_new_auth_token }
 
   describe 'POST /api/v1/performance_data' do
     before do
@@ -45,8 +47,19 @@ RSpec.describe Api::V1::PerformanceDataController, type: :request do
       expect(response_json['entries'].count).to eq 5
     end
     
+    describe do
+      let(:headers1) { { HTTP_ACCEPT: 'application/json' }.merge!(credentials1) }
+      before do
+        create(:performance_data,
+        data: { message: 'High' },
+        user: user1)
+          delete '/api/v1/auth/sign_out', headers: headers
+          get '/api/v1/performance_data', headers: headers1
+      end
 
-
-
+      it "returns only user1's performance data" do
+        expect(response_json['entries'].count).to eq 1
+      end
+    end
   end
 end
