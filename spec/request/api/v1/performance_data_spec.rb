@@ -1,5 +1,7 @@
 RSpec.describe Api::V1::PerformanceDataController, type: :request do
-  let(:headers) { { HTTP_ACCEPT: 'application/json' } }
+  let(:headers) { { HTTP_ACCEPT: 'application/json' }.merge!(credentials) }
+  let(:user) { create(:user) }
+  let(:credentials) { user.create_new_auth_token }
 
   describe 'POST /api/v1/performance_data' do
     before do
