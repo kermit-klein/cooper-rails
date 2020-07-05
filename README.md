@@ -3,9 +3,9 @@
 [Ali Erbay](https://github.com/kermit-klein)  
 [Jenny Scherr](https://github.com/jysmys)
 ## Built with  
-**Front End:** React 
-**Back End:** Rails 
-**Testing frameworks:** RSpec and Cypress/Enzyme/Jest  
+**Front End:** React  
+**Back End:** Rails  
+**Testing frameworks:** RSpec and Cypress/Enzyme/Jest   
 **Deployed at:** [Netlify](https://frosty-perlman-b731b4.netlify.app/)  and [Heroku](https://www.heroku.com/).  
 
 ## The code   
