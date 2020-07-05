@@ -1,4 +1,7 @@
 # The Cooper Challenge API  
+
+![Image](https://i.imgur.com/b8remLV.png)
+
 ### Author  
 [Ali Erbay](https://github.com/kermit-klein)  
 [Jenny Scherr](https://github.com/jysmys)
